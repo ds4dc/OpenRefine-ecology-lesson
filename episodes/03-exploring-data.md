@@ -29,18 +29,18 @@ A `facet` groups all the like values that appear in a column, and allows you to 
 
 One type of facet is called a 'Text facet'. This groups all the identical text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
 
-Here we will use faceting to look for potential errors in data entry in the `scientificName` column.
+Here we will use faceting to look for potential errors in data entry in the `species_binomial` column.
 
-1. Scroll over to the `scientificName` column.
+1. Scroll over to the `species_binomial` column.
 
 2. Click the down arrow and choose `Facet` > `Text facet`.
   
   ![](fig/or362-facet-menu.png){alt='Facet menu of a column'}
 
-3. In the left panel, you'll now see a box containing every unique value in the `scientificName` column
+3. In the left panel, you'll now see a box containing every unique value in the `species_binomial` column
   along with a number representing how many times that value occurs in the column.
   
-  ![](fig/or362-faceted-scientificname.png){alt='Faceting results on the column scientificName'}
+  ![](fig/or362-faceted-scientificname.png){alt='Faceting results on the column species_binomial'}
 
 4. Try sorting this facet by name and by count. Do you notice any problems with the data? What are they?
 
@@ -61,17 +61,17 @@ Facets are intended to group together common values and OpenRefine limits the nu
 
 ## Exercise
 
-1. Using faceting, find out how many years are represented in the census.
-2. Which years have the most and least observations?
+1. Using faceting, find out how many years are represented in the dataset.
+2. Which years have the most and least specimens?
 3. Is the column formatted as Number, Date, or Text?
 
 :::::::::::::::  solution
 
 ## Solution
 
-1. For the column `yr` do `Facet` > `Text facet`. A box will appear in the left panel showing that there are 16 unique entries in this column.
-2. After creating a facet, click `Sort by count` in the facet box. The year with the most observations is 1978. The least is 1993.
-3. By default, the column `yr` is formatted as Text.
+1. For the column `year` do `Facet` > `Text facet`. A box will appear in the left panel showing that there are 110 unique entries in this column.
+2. After creating a facet, click `Sort by count` in the facet box. The year with the most observations is 1964. Many years have only a single specimen. 
+3. By default, the column `year` is formatted as Text.
 
 :::::::::::::::::::::::::
 
@@ -85,30 +85,28 @@ When a table is imported into OpenRefine, all columns are treated as having text
 
 Sometimes there are non-number values or blanks in a column which may represent errors in data entry and we want to find them. We can do that with a `Numeric facet`.
 
-Create a `numeric facet` for the column `yr`. The facet will be empty because OpenRefine sees all the values as text.
+Create a `numeric facet` for the column `year`. The facet will be empty because OpenRefine sees all the values as text.
 
-To transform cells in the `yr` column to numbers, click the down arrow for that column, then `Edit cells` > `Common transforms…` > `To number`. You will notice the `yr` values change from left-justified to right-justified, and black to green color.
+To transform cells in the `year` column to numbers, click the down arrow for that column, then `Edit cells` > `Common transforms…` > `To number`. You will notice the `year` values change from left-justified to right-justified, and black to green color.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Exercise
 
-The dataset included other numeric columns that we will explore in this exercise:
+The dataset includes another numeric column that we will explore in this exercise:
 
-- `period` - Unique number assigned to each survey period
-- `plot` - Plot number animal was caught on, from 1 to 24
-- `recordID` - Unique record ID number to facilitate quick reference to particular entry
+- `elevation` - altitude of collecting locality
 
-Transform the columns `period`, `plot`, and `recordID` from text to numbers.
+Transform the column `elevation` from text to numbers.
 
-1. How does changing the format change the faceting display for the `yr` column?
+1. How does changing the format change the faceting display for the `year` column?
 2. Can all columns be transformed to numbers?
 
 :::::::::::::::  solution
 
 ## Solution
 
-Displaying a `Numeric facet` of `yr` shows a histogram of the number of
+Displaying a `Numeric facet` of `year` shows a histogram of the number of
 entries per year. Notice that the data is shown as a number, not a date. If you instead transform the column to a date, the program will assume all entries are on January 1st of the year.
 
 Only observations that include only numerals (0-9) can be transformed to numbers. If you apply a number transformation to a column that doesn't meet this criteria, and then click the Undo / Redo tab, you will see a step that starts with Text transform on 0 cells. This means that the data in that column was not transformed.
@@ -132,23 +130,6 @@ The next exercise will explore what happens when a numeric column contains value
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When done examining the numeric data, remove this facet by clicking the `x` in the upper left corner of its panel. Note that this does not undo the edits you made to the cells in this column.
-
-#### Examine a pair of numeric columns using scatterplots
-
-Now that we have multiple columns representing numbers, we can see how they relate to one another using the scatterplot facet. Select a numeric column, for example `recordID`, and use the pulldown menu to > `Facet` > `Scatterplot facet`. A new window called `Scatterplot Matrix` will appear. There are squares for each pair of numeric columns organized in an upper right triangle. Each square has little dots for the cell values from each row.
-
-![](fig/or372-scatterplots.png){alt='Scatterplots between numeric columns'}
-
-Click the image of the scatterplot between `recordID` and `yr` to select this one for the facet.
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Exercise
-
-Click in the scatterplot facet in the lower left margin and drag to highlight a rectangle. How does this change the data rows displayed?
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
