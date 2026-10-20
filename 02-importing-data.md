@@ -51,7 +51,7 @@ browser, the left margin has options to:
 
 1. Click `Create Project` from the left margin and select then `This Computer` (because you're uploading data from your computer).
 
-2. Click `Choose Files` and browse to where you stored the file `Portal_rodents_19772002_simplified.csv`. Select the
+2. Click `Choose Files` and browse to where you stored the file `ds4dc-sample.csv`. Select the
   file and click `Open`, or just double-click on the filename.
   
   ![](fig/or372-create-project.png){alt='Menu to create a new project'}

@@ -23,14 +23,14 @@ exercises: 15
 
 We can split data from one column into multiple columns if the parts are separated by a common separator (say a comma, or a space).
 
-1. Let us suppose we want to split the `scientificName` column into separate columns, one for genus and one for species.
-2. Click the down arrow next to the `scientificName` column. Choose `Edit Column` > `Split into several columns...`
+1. Let us suppose we want to split the `species_binomial` column into separate columns, one for genus and one for species.
+2. Click the down arrow next to the `species_binomial` column. Choose `Edit Column` > `Split into several columns...`
 3. In the pop-up, in the `Separator` box, replace the comma with a space (the box will look empty when you're done).
 4. Important! Uncheck the box that says `Remove this column`.
-5. Click `OK`. You should get some new columns called `scientificName 1`, `scientificName 2`, `scientificName 3`, and `scientificName 4`.
+5. Click `OK`. You should get some new columns called `species_binomial 1`, `species_binomial 2`, and `species_binomial 3`.
 6. Notice that in some cases these newly created columns are empty (you can check by text faceting the column). Why? What do you think we can do to fix it?
 
-The entries that have data in `scientificName 3` and `scientificName 4` but not the first two `scientificName` columns had an extra space at the beginning of the entry. Leading and trailing white spaces are very difficult to notice when cleaning data
+The entries that have data in `species_binomial 3` but not the first two `species_binomial` columns had an extra space at the beginning of the entry. Leading and trailing white spaces are very difficult to notice when cleaning data
 manually. This is another advantage of using OpenRefine to clean your data - this process can be automated.
 
 In newer versions of OpenRefine (from version 3.4.1) there is now an option to
@@ -67,33 +67,33 @@ It is common while exploring and cleaning a dataset to make a mistake or decide 
   
   ![](fig/or362-undoredo.png){alt='OpenRefine tab for Undo/Redo actions'}
 
-2. We want to undo the splitting of the column `scientificName`. Select the stage just
-  before the split occurred and the new `scientificName` columns will disappear.
+2. We want to undo the splitting of the column `species_binomial`. Select the stage just
+  before the split occurred and the new `species_binomial` columns will disappear.
 
 3. Notice that you can still click on the last stage and make the columns reappear, and toggle back and forth between these states. You can also select the state more than one steps back and revert to that state.
 
-4. Let's leave the dataset in the state before `scientificNames` was split.
+4. Let's leave the dataset in the state before `species_binomial` was split.
 
 ## Trimming leading and trailing whitespace
 
-Words with spaces at the beginning or end are particularly hard for humans to identify from strings without these spaces (as we have seen with the `scientificName` column). However, blank spaces can make a big difference to computers, so we usually want to remove them.
+Words with spaces at the beginning or end are particularly hard for humans to identify from strings without these spaces (as we have seen with the `species_binomial` column). However, blank spaces can make a big difference to computers, so we usually want to remove them.
 
-1. In the header for the column `scientificName`, choose `Edit cells` > `Common transforms` > `Trim leading and trailing whitespace`.
+1. In the header for the column `species_binomial`, choose `Edit cells` > `Common transforms` > `Trim leading and trailing whitespace`.
 2. Notice that the `Split` step has now disappeared from the `Undo / Redo` pane on the left and is replaced with a `Text transform on 2 cells`
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Exercise
 
-Repeat the splitting of column `scientificName` exercise after trimming the whitespace.
+Repeat the splitting of column `species_binomial` exercise after trimming the whitespace.
 
 :::::::::::::::  solution
 
 ## Solution
 
-On the `scientificName` column, click the down arrow next to the `scientificName` column and
+On the `species_binomial` column, click the down arrow next to the `species_binomial` column and
 choose `Edit Column` > `Split into several columns...` from the drop down menu. Use a blank character as a separator,
-as before. You should now get only two columns `scientificName 1` and `scientificName 2`.
+as before. You should now get only two columns `species_binomial 1` and `species_binomial 2`.
 
 
 
@@ -113,7 +113,7 @@ We want to rename these as `genus` and `species`, respectively.
 
 ## Exercise
 
-Try to change the name of the `scientificName 2` column to `species`. What problem do you encounter? How can you fix the problem?
+Try to change the name of the `scientificName 1` column to `genus`. What problem do you encounter? How can you fix the problem?
 
 :::::::::::::::  solution
 
@@ -134,15 +134,15 @@ Edit the name of the `species` column to `species_abbreviation`. Then, rename `s
 
 ## Combining columns to create new ones
 
-The date for each row in the data file is split in three columns: `dy` (day), `mo` (month), and `yr` (year). We can create a new column with the date in the format we want by combining these columns.
+The date for each row in the data file is split in three columns: `year`, `month` and `day`. We can create a new column with the date in the format we want by combining these columns.
 
-- Click on the menu for the `yr` column and select `Edit column` > `Join columns...`.
+- Click on the menu for the `year` column and select `Edit column` > `Join columns...`.
 
-- In the window that opens up, check the boxes next to the columns `yr`, `mo`, and `dy`.
+- In the window that opens up, check the boxes next to the columns `year`, `month`, and `day`.
 
 - Enter `-` as a separator.
 
-- Select the option `Write result in new column named` and write `date` as the name for the new column.
+- Select the option `Write result in new column named` and write `eventDate` as the name for the new column.
 
 - Click `OK`
   
@@ -150,7 +150,7 @@ The date for each row in the data file is split in three columns: `dy` (day), `m
 
 You can change the order of the columns by dragging the columns in the left side of the window.
 
-Once the new column is created, convert it to date using `Edit cells` > `Common transforms` > `To date`. Now you can explore the data using a timeline facet. Create the new facet by clicking on the menu for the column `date` and select `Facet` > `Timeline facet`.
+Once the new column is created, convert it to date using `Edit cells` > `Common transforms` > `To date`. Now you can explore the data using a timeline facet. Create the new facet by clicking on the menu for the column `eventDate` and select `Facet` > `Timeline facet`.
 
 ## Data clustering
 
@@ -162,17 +162,14 @@ occur a lot in scientific data. Clustering gives us a tool to resolve them.
 
 OpenRefine provides different clustering algorithms. The best way to understand how they work is to experiment with them.
 
-The dataset has several near-identical entries in `scientificName`. For example, there are two misspellings of *Ammospermophilus harrisii*:
+The dataset has several near-identical entries in `species_binomial`. For example, there is a misspelling of *Decaspermum fruticosum* (*Decaspermum fruticosm*).
 
-- *Ammospermophilis harrisi* and
-- *Ammospermophilus harrisi*
-
-1. If you removed it, reinstate the `scientificName` text facet (you can also remove all the other facets to gain some space).
-  In the `scientificName` text facet box - click the `Cluster` button.
+1. If you removed it, reinstate the `species_binomial` text facet (you can also remove all the other facets to gain some space).
+  In the `species_binomial` text facet box - click the `Cluster` button.
 
 2. In the resulting pop-up window, you can change the `Method` and the `Keying Function`. Try different combinations to see what different mergers of values are suggested.
 
-3. If you select the `key collision` method and the `metaphone3` keying function, it should identify one cluster:
+3. If you select the `nearest neighbour` method and the `Levenshtein` distance function, it should identify one cluster:
   
   ![](fig/or362-clustering.png){alt='OpenRefine window for clustering'}
 
@@ -181,9 +178,9 @@ The dataset has several near-identical entries in `scientificName`. For example,
 
 5. Tick the `Merge?` checkbox beside each group, then click `Merge selected & Close` to apply the corrections to the dataset and close the window.
 
-6. The text facet of `scientificName` will update to show the new summary of the column. It will now have ten options:
+6. The text facet of `species_binomial` will update to show the new summary of the column. It will now have nine options:
   
-  ![](fig/or362-clustering-result.png){alt='Facet of scientificName after clustering'}
+  ![](fig/or362-clustering-result.png){alt='Facet of species_binomial after clustering'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
