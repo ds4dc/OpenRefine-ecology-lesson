@@ -374,7 +374,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Transforming Data</h1>
-        <p>Last updated on 2026-10-08 |
+        <p>Last updated on 2026-10-20 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/04-transforming-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -416,10 +416,10 @@ typos</li>
 <section><h2 class="section-heading" id="data-splitting">Data splitting<a class="anchor" aria-label="anchor" href="#data-splitting"></a></h2>
 <hr class="half-width"><p>We can split data from one column into multiple columns if the parts
 are separated by a common separator (say a comma, or a space).</p>
-<ol style="list-style-type: decimal"><li>Let us suppose we want to split the <code>scientificName</code>
+<ol style="list-style-type: decimal"><li>Let us suppose we want to split the <code>species_binomial</code>
 column into separate columns, one for genus and one for species.</li>
-<li>Click the down arrow next to the <code>scientificName</code> column.
-Choose <code>Edit Column</code> &gt;
+<li>Click the down arrow next to the <code>species_binomial</code>
+column. Choose <code>Edit Column</code> &gt;
 <code>Split into several columns...</code>
 </li>
 <li>In the pop-up, in the <code>Separator</code> box, replace the comma
@@ -427,17 +427,17 @@ with a space (the box will look empty when you’re done).</li>
 <li>Important! Uncheck the box that says
 <code>Remove this column</code>.</li>
 <li>Click <code>OK</code>. You should get some new columns called
-<code>scientificName 1</code>, <code>scientificName 2</code>,
-<code>scientificName 3</code>, and <code>scientificName 4</code>.</li>
+<code>species_binomial 1</code>, <code>species_binomial 2</code>, and
+<code>species_binomial 3</code>.</li>
 <li>Notice that in some cases these newly created columns are empty (you
 can check by text faceting the column). Why? What do you think we can do
 to fix it?</li>
-</ol><p>The entries that have data in <code>scientificName 3</code> and
-<code>scientificName 4</code> but not the first two
-<code>scientificName</code> columns had an extra space at the beginning
-of the entry. Leading and trailing white spaces are very difficult to
-notice when cleaning data manually. This is another advantage of using
-OpenRefine to clean your data - this process can be automated.</p>
+</ol><p>The entries that have data in <code>species_binomial 3</code> but not
+the first two <code>species_binomial</code> columns had an extra space
+at the beginning of the entry. Leading and trailing white spaces are
+very difficult to notice when cleaning data manually. This is another
+advantage of using OpenRefine to clean your data - this process can be
+automated.</p>
 <p>In newer versions of OpenRefine (from version 3.4.1) there is now an
 option to clean leading and trailing white spaces from all data when
 importing the data initially and creating the project.</p>
@@ -483,22 +483,22 @@ current stage in the data processing is highlighted in blue (i.e. step
 process, the step identified in blue will change and, far more
 importantly, the data will revert to that stage in the processing.</li>
 </ol><figure><img src="../fig/or362-undoredo.png" alt="OpenRefine tab for Undo/Redo actions" class="figure mx-auto d-block"></figure><ol start="2" style="list-style-type: decimal"><li><p>We want to undo the splitting of the column
-<code>scientificName</code>. Select the stage just before the split
-occurred and the new <code>scientificName</code> columns will
+<code>species_binomial</code>. Select the stage just before the split
+occurred and the new <code>species_binomial</code> columns will
 disappear.</p></li>
 <li><p>Notice that you can still click on the last stage and make the
 columns reappear, and toggle back and forth between these states. You
 can also select the state more than one steps back and revert to that
 state.</p></li>
 <li><p>Let’s leave the dataset in the state before
-<code>scientificNames</code> was split.</p></li>
+<code>species_binomial</code> was split.</p></li>
 </ol></section><section><h2 class="section-heading" id="trimming-leading-and-trailing-whitespace">Trimming leading and trailing whitespace<a class="anchor" aria-label="anchor" href="#trimming-leading-and-trailing-whitespace"></a></h2>
 <hr class="half-width"><p>Words with spaces at the beginning or end are particularly hard for
 humans to identify from strings without these spaces (as we have seen
-with the <code>scientificName</code> column). However, blank spaces can
-make a big difference to computers, so we usually want to remove
+with the <code>species_binomial</code> column). However, blank spaces
+can make a big difference to computers, so we usually want to remove
 them.</p>
-<ol style="list-style-type: decimal"><li>In the header for the column <code>scientificName</code>, choose
+<ol style="list-style-type: decimal"><li>In the header for the column <code>species_binomial</code>, choose
 <code>Edit cells</code> &gt; <code>Common transforms</code> &gt;
 <code>Trim leading and trailing whitespace</code>.</li>
 <li>Notice that the <code>Split</code> step has now disappeared from the
@@ -513,7 +513,7 @@ them.</p>
 <div id="exercise-1" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<p>Repeat the splitting of column <code>scientificName</code> exercise
+<p>Repeat the splitting of column <code>species_binomial</code> exercise
 after trimming the whitespace.</p>
 </div>
 </div>
@@ -525,12 +525,12 @@ after trimming the whitespace.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>On the <code>scientificName</code> column, click the down arrow next
-to the <code>scientificName</code> column and choose
+<p>On the <code>species_binomial</code> column, click the down arrow
+next to the <code>species_binomial</code> column and choose
 <code>Edit Column</code> &gt; <code>Split into several columns...</code>
 from the drop down menu. Use a blank character as a separator, as
 before. You should now get only two columns
-<code>scientificName 1</code> and <code>scientificName 2</code>.</p>
+<code>species_binomial 1</code> and <code>species_binomial 2</code>.</p>
 </div>
 </div>
 </div>
@@ -552,8 +552,8 @@ column, click the down arrow and then <code>Edit column</code> &gt;
 <div id="exercise-2" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<p>Try to change the name of the <code>scientificName 2</code> column to
-<code>species</code>. What problem do you encounter? How can you fix the
+<p>Try to change the name of the <code>scientificName 1</code> column to
+<code>genus</code>. What problem do you encounter? How can you fix the
 problem?</p>
 </div>
 </div>
@@ -585,16 +585,17 @@ change the name of the <code>species</code> column and then rename the
 <code>scientificName 2</code> to <code>species</code>.</p>
 </section><section><h2 class="section-heading" id="combining-columns-to-create-new-ones">Combining columns to create new ones<a class="anchor" aria-label="anchor" href="#combining-columns-to-create-new-ones"></a></h2>
 <hr class="half-width"><p>The date for each row in the data file is split in three columns:
-<code>dy</code> (day), <code>mo</code> (month), and <code>yr</code>
-(year). We can create a new column with the date in the format we want
-by combining these columns.</p>
-<ul><li><p>Click on the menu for the <code>yr</code> column and select
+<code>year</code>, <code>month</code> and <code>day</code>. We can
+create a new column with the date in the format we want by combining
+these columns.</p>
+<ul><li><p>Click on the menu for the <code>year</code> column and select
 <code>Edit column</code> &gt; <code>Join columns...</code>.</p></li>
 <li><p>In the window that opens up, check the boxes next to the columns
-<code>yr</code>, <code>mo</code>, and <code>dy</code>.</p></li>
+<code>year</code>, <code>month</code>, and <code>day</code>.</p></li>
 <li><p>Enter <code>-</code> as a separator.</p></li>
 <li><p>Select the option <code>Write result in new column named</code>
-and write <code>date</code> as the name for the new column.</p></li>
+and write <code>eventDate</code> as the name for the new
+column.</p></li>
 <li>
 <p>Click <code>OK</code></p>
 <figure><img src="../fig/or372-joincols.png" alt="OpenRefine window for joining columns" class="figure mx-auto d-block"></figure></li>
@@ -604,7 +605,7 @@ the left side of the window.</p>
 <code>Edit cells</code> &gt; <code>Common transforms</code> &gt;
 <code>To date</code>. Now you can explore the data using a timeline
 facet. Create the new facet by clicking on the menu for the column
-<code>date</code> and select <code>Facet</code> &gt;
+<code>eventDate</code> and select <code>Facet</code> &gt;
 <code>Timeline facet</code>.</p>
 </section><section><h2 class="section-heading" id="data-clustering">Data clustering<a class="anchor" aria-label="anchor" href="#data-clustering"></a></h2>
 <hr class="half-width"><p>Clustering allows you to find groups of entries that are not
@@ -618,21 +619,18 @@ scientific data. Clustering gives us a tool to resolve them.</p>
 <p>OpenRefine provides different clustering algorithms. The best way to
 understand how they work is to experiment with them.</p>
 <p>The dataset has several near-identical entries in
-<code>scientificName</code>. For example, there are two misspellings of
-<em>Ammospermophilus harrisii</em>:</p>
-<ul><li>
-<em>Ammospermophilis harrisi</em> and</li>
-<li><em>Ammospermophilus harrisi</em></li>
-</ul><ol style="list-style-type: decimal"><li><p>If you removed it, reinstate the <code>scientificName</code> text
-facet (you can also remove all the other facets to gain some space). In
-the <code>scientificName</code> text facet box - click the
+<code>species_binomial</code>. For example, there is a misspelling of
+<em>Decaspermum fruticosum</em> (<em>Decaspermum fruticosm</em>).</p>
+<ol style="list-style-type: decimal"><li><p>If you removed it, reinstate the <code>species_binomial</code>
+text facet (you can also remove all the other facets to gain some
+space). In the <code>species_binomial</code> text facet box - click the
 <code>Cluster</code> button.</p></li>
 <li><p>In the resulting pop-up window, you can change the
 <code>Method</code> and the <code>Keying Function</code>. Try different
 combinations to see what different mergers of values are
 suggested.</p></li>
-<li><p>If you select the <code>key collision</code> method and the
-<code>metaphone3</code> keying function, it should identify one
+<li><p>If you select the <code>nearest neighbour</code> method and the
+<code>Levenshtein</code> distance function, it should identify one
 cluster:</p></li>
 </ol><figure><img src="../fig/or362-clustering.png" alt="OpenRefine window for clustering" class="figure mx-auto d-block"></figure><ol start="4" style="list-style-type: decimal"><li><p>Note that the <code>New Cell Value</code> column displays the new
 name that will replace the value in all the cells in the group. You can
@@ -641,9 +639,10 @@ one.</p></li>
 <li><p>Tick the <code>Merge?</code> checkbox beside each group, then
 click <code>Merge selected &amp; Close</code> to apply the corrections
 to the dataset and close the window.</p></li>
-<li><p>The text facet of <code>scientificName</code> will update to show
-the new summary of the column. It will now have ten options:</p></li>
-</ol><figure><img src="../fig/or362-clustering-result.png" alt="Facet of scientificName after clustering" class="figure mx-auto d-block"></figure><div id="clustering-documentation" class="callout">
+<li><p>The text facet of <code>species_binomial</code> will update to
+show the new summary of the column. It will now have nine
+options:</p></li>
+</ol><figure><img src="../fig/or362-clustering-result.png" alt="Facet of species_binomial after clustering" class="figure mx-auto d-block"></figure><div id="clustering-documentation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -728,7 +727,7 @@ bulk</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/04-transforming-data.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/04-transforming-data.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-10-20",
   "datePublished": "2026-10-20"
 }
 
