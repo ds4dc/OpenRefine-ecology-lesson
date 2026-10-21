@@ -830,7 +830,7 @@ dataset.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>For the column <code>year</code> do <code>Facet</code> &gt;
@@ -897,7 +897,7 @@ this exercise:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Displaying a <code>Numeric facet</code> of <code>year</code> shows a
 histogram of the number of entries per year. Notice that the data is
@@ -1062,7 +1062,7 @@ for <code>Guess cell type</code> is checked and that
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Both new columns will appear with green text, indicating they are
 numeric. The option for <code>Guess cell type</code> allowed OpenRefine
@@ -1132,7 +1132,7 @@ after trimming the whitespace.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>On the <code>species_binomial</code> column, click the down arrow
 next to the <code>species_binomial</code> column and choose
@@ -1176,7 +1176,7 @@ problem?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>On the <code>scientificName 2</code> column, click the down arrow
@@ -1732,8 +1732,8 @@ options in cells. The ‘tick’ accepts the match for the single cell, the
 </ol>
 <ul>
 <li>In the species_binomial column you should be able to see the various
-potential matches. Clicking on a match will take you to the EOL page for
-that entity <img src="../fig/or372-reconcile-results.png" alt="Reconciliation menu for each cell" class="figure">
+potential matches. Clicking on a match will take you to the
+ChecklistBank page for that entity <img src="../fig/or372-reconcile-results.png" alt="Reconciliation menu for each cell" class="figure">
 </li>
 </ul>
 <ol style="list-style-type: decimal">
@@ -1772,7 +1772,7 @@ data</li>
 </div>
 </section></section><section id="aio-07-looking-up-data"><p>Content from <a href="07-looking-up-data.html">Looking Up Data</a></p>
 <hr>
-<p>Last updated on 2026-10-08 |
+<p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/07-looking-up-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1814,10 +1814,20 @@ OpenRefine project</li>
 <hr class="half-width">
 <p>OpenRefine can retrieve data from URLs. This can be used in various
 ways, including looking up additional information from a remote service,
-based on information in your OpenRefine data. As an example, you can
-look up the scientific names in a dataset against the taxonomy of the
-Global Biodiversity Information Facility (GBIF), and retrieve additional
-information such as higher taxonomy and identifiers.</p>
+based on information in your OpenRefine data.</p>
+<p>Up till now we have been working with scientific names, now we switch
+to working with the names of the people that collected the specimen, as
+found in the <code>recordedBy</code> column. If you add a text facet on
+this column you will see that there are many different ways that
+personal names have been abbrevatiated, and many different ways that
+individual names have been joined together in a team.</p>
+<p>Luckily the Bionomia project (<a href="https://bionomia.net" class="external-link uri">https://bionomia.net</a>) has a service that parses the
+recordedBy values and returns the different parts of the name (title,
+given name, family name etc) for each member of the recordedBy team. You
+can try it out with data that you type or paste into a webpage here: <a href="https://bionomia.net/parse" class="external-link uri">https://bionomia.net/parse</a></p>
+<p>Instead of us copying and pasting data into this useful utility, we
+can use Open Refine to send our data values to the service and record
+the results.</p>
 <p>Typically this is a two step process, firstly a step to retrieve data
 from a remote service, and secondly to extract the relevant information
 from the data you have retrieved.</p>
@@ -1839,27 +1849,28 @@ been retrieved. Two specific OpenRefine functions used for this are:</p>
 <p>The <code>parseHtml()</code> function can also be used to extract
 data from XML.</p>
 <div class="section level3">
-<h3 id="retrieving-higher-taxonomy-from-gbif">Retrieving higher taxonomy from GBIF<a class="anchor" aria-label="anchor" href="#retrieving-higher-taxonomy-from-gbif"></a>
+<h3 id="retrieving-parsed-recordedby-team-names-from-bionomia">Retrieving parsed recordedBy team names from Bionomia<a class="anchor" aria-label="anchor" href="#retrieving-parsed-recordedby-team-names-from-bionomia"></a>
 </h3>
-<p>In this case we are going to use the <a href="https://www.gbif.org/developer/summary" class="external-link">GBIF API</a>. Note that
-API providers may impose rate limits or have other requirements for
-using their data, so it’s important to check the site’s documentation.
-To reduce the impact on the service, use a value of <code>500</code> in
-the <code>Throttle Delay</code> setting to specify the number of
-milliseconds between requests.</p>
-<p>The syntax for requesting species information from GBIF is
-<code>http://api.gbif.org/v1/species/match?name={name}</code> where
-{name} is replaced with the scientific name in the dataset.</p>
+<p>In this case we are going to use the <a href="https://bionomia.net/developers/parse" class="external-link">Bionomia parsing API</a>.
+Note that API providers may impose rate limits or have other
+requirements for using their data, so it’s important to check the site’s
+documentation. To reduce the impact on the service, use a value of
+<code>500</code> in the <code>Throttle Delay</code> setting to specify
+the number of milliseconds between requests.</p>
+<p>The syntax for requesting a team name parse from Bionomia is
+<code>https://api.bionomia.net/parse.json?names={recordedBy}</code>
+where {recordedBy} is replaced with the recordedBy value from the
+dataset.</p>
 <ul>
-<li><p>Using the dropdown menu of <code>scientificName</code>, select
+<li><p>Using the dropdown menu of <code>recordedBy</code>, select
 <code>Edit column</code> &gt;
 <code>Add column by fetching URLs...</code></p></li>
 <li><p>In the <code>New column name</code> field, enter
-“gbif_JSON”</p></li>
+“bionomia_JSON”</p></li>
 <li><p>In the field for <code>Throttle delay</code> enter 500</p></li>
 <li>
 <p>In the expression box type the GREL
-<code>"http://api.gbif.org/v1/species/match?name="+escape(value,'url')</code></p>
+<code>"https://api.bionomia.net/parse.json?names="+escape(value,'url')</code></p>
 <p>At this point, your screen should be similar to this:</p>
 <figure><img src="../fig/or362-data-from-url.png" alt="Add column by fetching URLs screen capture" class="figure mx-auto d-block"></figure>
 </li>
@@ -1873,7 +1884,7 @@ Wait for this to complete.</p>
 string in a format called ‘JSON’ (this stands for JavaScript Object
 Notation, although very rarely spelt out in full). The results should
 look like this figure:</p>
-<figure><img src="../fig/or372-fetch-gbifjson.png" alt="Example of the results of fetching data from GBIF" class="figure mx-auto d-block"></figure><p>OpenRefine has a function for extracting data from JSON (sometimes
+<figure><img src="../fig/or372-fetch-gbifjson.png" alt="Example of the results of fetching data from Bionomia" class="figure mx-auto d-block"></figure><p>OpenRefine has a function for extracting data from JSON (sometimes
 referred to as ‘parsing’ the JSON). The <code>parseJson()</code>
 function is explained in more detail at the <a href="https://docs.openrefine.org/manual/grelfunctions/#format-based-functions-json-html-xml" class="external-link">Format-based
 functions page</a>.</p>
@@ -1881,21 +1892,55 @@ functions page</a>.</p>
 <li><p>In the new column you’ve just added use the dropdown menu to
 access <code>Edit column</code> &gt;
 <code>Add column based on this column...</code></p></li>
-<li><p>Add the new column name: “gbif_family”</p></li>
+<li><p>Add the new column name: “recordedBy_first_family”</p></li>
 <li><p>In the Expression box type the GREL
-<code>value.parseJson().get("family")</code></p></li>
+<code>parseJson(value)[0]['parsed'][0]['family']</code></p></li>
 <li>
-<p>You should see in the Preview the taxonomic family of the
-scientific names displays, similar to this screen:</p>
-<figure><img src="../fig/or362-parse-json.png" alt="Parse JSON to extract taxonomic family" class="figure mx-auto d-block"></figure>
+<p>You should see in the Preview the familyname of the first
+collector in recordedBy displayed, similar to this screen:</p>
+<figure><img src="../fig/or362-parse-json.png" alt="Parse JSON to extract familyname of the first collector" class="figure mx-auto d-block"></figure>
 </li>
 </ul>
 <p>The reason for using <code>Add column based on this column</code> is
 that this allows you to retain the full JSON and extract further data
-from it if you need to. If you only wanted the taxonomic family and did
-not need any other information from the JSON you could use
+from it if you need to. If you only wanted the first collector name and
+did not need any other information from the JSON you could use
 <code>Edit cells</code> &gt; <code>Transform...</code> with the same
 GREL expression.</p>
+<div id="exercise" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise" class="callout-inner">
+<h3 class="callout-title">Exercise</h3>
+<div class="callout-content">
+<p>We typically find specimen duplicates using collector name,
+recordnumber (and year). Now that we have standardised the collector
+name by extracting the family name of the first collector from
+recordedBy, can you make a column that can help us locate specimen
+duplicates in the dataset? Which specimen collecting event has the most
+duplicate specimens in the dataset?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>We can make a new column (<code>rb_name_num_year</code>) by joining
+<code>recordedBy_first_family</code>, <code>recordNumber</code> and
+<code>year</code> and separating the values by spaces.</p>
+<p>Adding a facet on <code>rb_name_num_year</code>, and sorting by count
+shows that the collecting event <code>Beaman 10029 1984</code> has 5
+duplicate specimens in the dataset.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1904,8 +1949,8 @@ GREL expression.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>OpenRefine can look up custom URLs to fetch data based on what’s in
-an OpenRefine project</li>
+<li>OpenRefine can look up custom URLs to fetch or process data based on
+what’s in an OpenRefine project</li>
 <li>Such API calls can be custom built</li>
 </ul>
 </div>
