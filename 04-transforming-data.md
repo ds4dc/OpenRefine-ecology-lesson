@@ -142,6 +142,8 @@ The date for each row in the data file is split in three columns: `year`, `month
 
 - Enter `-` as a separator.
 
+- Some of the records do not have month or day values, we only know the year of collection. We can select `skip nulls` to skip over these records, so that we only build a date where we are sure it is precise.
+
 - Select the option `Write result in new column named` and write `eventDate` as the name for the new column.
 
 - Click `OK`
@@ -149,8 +151,6 @@ The date for each row in the data file is split in three columns: `year`, `month
   ![](fig/or372-joincols.png){alt='OpenRefine window for joining columns'}
 
 You can change the order of the columns by dragging the columns in the left side of the window.
-
-Once the new column is created, convert it to date using `Edit cells` > `Common transforms` > `To date`. Now you can explore the data using a timeline facet. Create the new facet by clicking on the menu for the column `eventDate` and select `Facet` > `Timeline facet`.
 
 ## Data clustering
 
