@@ -968,7 +968,7 @@ Faceting</a></p>
 </div>
 </section></section><section id="aio-04-transforming-data"><p>Content from <a href="04-transforming-data.html">Transforming Data</a></p>
 <hr>
-<p>Last updated on 2026-10-20 |
+<p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/04-transforming-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1056,7 +1056,7 @@ for <code>Guess cell type</code> is checked and that
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Both new columns will appear with green text, indicating they are
 numeric. The option for <code>Guess cell type</code> allowed OpenRefine
@@ -1126,7 +1126,7 @@ after trimming the whitespace.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>On the <code>species_binomial</code> column, click the down arrow
 next to the <code>species_binomial</code> column and choose
@@ -1170,7 +1170,7 @@ problem?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>On the <code>scientificName 2</code> column, click the down arrow
@@ -1205,6 +1205,10 @@ these columns.</p>
 <li><p>In the window that opens up, check the boxes next to the columns
 <code>year</code>, <code>month</code>, and <code>day</code>.</p></li>
 <li><p>Enter <code>-</code> as a separator.</p></li>
+<li><p>Some of the records do not have month or day values, we only know
+the year of collection. We can select <code>skip nulls</code> to skip
+over these records, so that we only build a date where we are sure it is
+precise.</p></li>
 <li><p>Select the option <code>Write result in new column named</code>
 and write <code>eventDate</code> as the name for the new
 column.</p></li>
@@ -1215,12 +1219,6 @@ column.</p></li>
 </ul>
 <p>You can change the order of the columns by dragging the columns in
 the left side of the window.</p>
-<p>Once the new column is created, convert it to date using
-<code>Edit cells</code> &gt; <code>Common transforms</code> &gt;
-<code>To date</code>. Now you can explore the data using a timeline
-facet. Create the new facet by clicking on the menu for the column
-<code>eventDate</code> and select <code>Facet</code> &gt;
-<code>Timeline facet</code>.</p>
 </section><section><h2 class="section-heading" id="data-clustering">Data clustering<a class="anchor" aria-label="anchor" href="#data-clustering"></a>
 </h2>
 <hr class="half-width">
@@ -1291,7 +1289,7 @@ bulk</li>
 </div>
 </section></section><section id="aio-05-filter-exclude-sort"><p>Content from <a href="05-filter-exclude-sort.html">Filtering and Sorting with OpenRefine</a></p>
 <hr>
-<p>Last updated on 2026-10-08 |
+<p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/05-filter-exclude-sort.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1337,22 +1335,22 @@ filters to your data.</p>
 </h3>
 <p>One way to filter down our data is to use the <code>include</code> or
 <code>exclude</code> buttons on the entries in a text facet. If you
-still have your text facet for <code>scientificName</code>, you can use
-it. If you’ve closed that facet, recreate it by selecting
+still have your text facet for <code>species_binomial</code>, you can
+use it. If you’ve closed that facet, recreate it by selecting
 <code>Facet</code> &gt; <code>Text facet</code> on the
-<code>scientificName</code> column.</p>
+<code>species_binomial</code> column.</p>
 <ol style="list-style-type: decimal">
-<li>In the text facet, hover over one of the names, e.g. <em>Baiomys
-taylori</em>. Notice that when you hover over it, there are buttons to
-the right for <code>edit</code> and <code>include</code>.</li>
-<li>Whilst hovering over <em>Baiomys taylori</em>, move to the right and
-click the <code>include</code> option. This will include this species,
-as signified by the name of the species changing from blue to orange,
-and new options of <code>edit</code> and <code>exclude</code> will be
-presented. Note that in the top of the page, “33 matching rows” is now
-displayed instead of “790 rows”.</li>
+<li>In the text facet, hover over one of the names, e.g. <em>Decaspermum
+gracilentum</em>. Notice that when you hover over it, there are buttons
+to the right for <code>edit</code> and <code>include</code>.</li>
+<li>Whilst hovering over <em>Decaspermum gracilentum</em>, move to the
+right and click the <code>include</code> option. This will include this
+species, as signified by the name of the species changing from blue to
+orange, and new options of <code>edit</code> and <code>exclude</code>
+will be presented. Note that in the top of the page, “1 matching rows”
+is now displayed instead of “964 rows”.</li>
 <li>You can include other species in your current filter - e.g. click on
-<em>Chaetodipus baileyi</em> in the same way to include it in the
+<em>Decaspermum humile</em> in the same way to include it in the
 filter.</li>
 <li>Alternatively, you can click the name of the species to include it
 in the filter instead of clicking the
@@ -1371,19 +1369,19 @@ continuing to the next step.</p>
 </h3>
 <p>One way to filter data is to create a text filter on a column. Close
 all facets you may have created previously and reinstate the text facet
-on the <code>scientificName</code> column.</p>
+on the <code>species_binomial</code> column.</p>
 <ol style="list-style-type: decimal">
-<li><p>Click the down arrow next to <code>scientificName</code> &gt;
-<code>Text filter</code>. A <code>scientificName</code> filter will
+<li><p>Click the down arrow next to <code>species_binomial</code> &gt;
+<code>Text filter</code>. A <code>species_binomial</code> filter will
 appear on the left margin below the text facet.</p></li>
-<li><p>Type in <code>bai</code> into the text box in the filter and
-press return. At the top of the page it will report that, out of the 790
-rows in the raw data, there are 35 rows in which the text has been found
-within the <code>scientificName</code> column (and these rows will be
+<li><p>Type in <code>ile</code> into the text box in the filter and
+press return. At the top of the page it will report that, out of the 964
+rows in the raw data, there are 18 rows in which the text has been found
+within the <code>species_binomial</code> column (and these rows will be
 selected for the subsequent steps).</p></li>
 </ol>
 <figure><img src="fig/or362-filter-scientificname.png" alt="OpenRefine filtering example" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal">
-<li>Near the top of the screen, change <code>Show:</code> to 50. This
+<li>Near the top of the screen, change <code>Show:</code> to 25. This
 way, you will see all the matching rows in a single page.</li>
 </ol>
 <div id="exercise" class="callout challenge">
@@ -1412,21 +1410,13 @@ selected?</li>
 <ol style="list-style-type: decimal">
 <li>Do <code>Facet</code> &gt; <code>Text facet</code> on the
 <code>scientificName</code> column after filtering. This will show that
-two names match your filter criteria. They are <em>Baiomys taylori</em>
-and <em>Chaetodipus baileyi</em>.</li>
-<li>To restrict to only one of these two species, you could:</li>
+two names match your filter criteria. They are <em>Decaspermum
+gracilentum</em> and <em>Decaspermum humile</em>.</li>
+<li>To restrict to only one of these two species, you could include more
+letters in your filter (i.e. typing <code>ilen</code> will exclusively
+return <em>Decaspermum gracilentum</em>, while <code>mile</code> will
+only return <em>Decaspermum humile</em>).</li>
 </ol>
-<ul>
-<li>Check the <code>case sensitive</code> box within the
-<code>scientificName</code> facet. Once you do this, you will see that
-using the upper-case <code>Bai</code> will only &gt; &gt; return
-<em>Baiomys taylori</em>, while using lower-case <code>bai</code> will
-only return <em>Chaetodipus baileyi</em>.</li>
-<li>You could include more letters in your filter (i.e. typing
-<code>baio</code> will exclusively return <em>Baiomys taylori</em>,
-while <code>bail</code> will only return <em>Chaetodipus
-baileyi</em>).</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1446,8 +1436,8 @@ further inspection and analysis.</p>
 </div>
 </div>
 </div>
-<p><strong>Important:</strong> Make sure both species (<em>Baiomys
-taylori</em> and <em>Chaetodipus baileyi</em>) are included in your
+<p><strong>Important:</strong> Make sure both species (<em>Decaspermum
+gracilentum</em> and <em>Decaspermum humile</em>) are included in your
 filtered dataset before continuing with the rest of the exercises.</p>
 </div>
 </section><section><h2 class="section-heading" id="sort">Sort<a class="anchor" aria-label="anchor" href="#sort"></a>
@@ -1485,7 +1475,7 @@ will then appear for you to fine-tune your sorting.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>In the <code>mo</code> column, select <code>Sort...</code> &gt;
+<p>In the <code>month</code> column, select <code>Sort...</code> &gt;
 <code>numbers</code> and select <code>smallest first</code>. The months
 are listed from 1 (for January) through 12 (December).</p>
 </div>
@@ -1510,33 +1500,6 @@ to reverse the order of the sort.</p>
 you to undo your sort.</p>
 </blockquote></li>
 </ul>
-<div id="exercise-2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise</h3>
-<div class="callout-content">
-<p>Sort the data by <code>plot</code>. What year(s) were observations
-recorded for plot 1 in this filtered dataset?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<p>In the <code>plot</code> column, select <code>Sort...</code> &gt;
-<code>numbers</code> and select <code>smallest first</code>. The years
-represented include 1990 and 1995.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="section level3">
 <h3 id="sorting-by-multiple-columns">Sorting by multiple columns<a class="anchor" aria-label="anchor" href="#sorting-by-multiple-columns"></a>
 </h3>
@@ -1545,12 +1508,12 @@ columns. The sort will depend on the order in which you select columns
 to sort. To restart the sorting process with a particular column, check
 the <code>sort by this column alone</code> box in the <code>Sort</code>
 pop-up menu.</p>
-<div id="exercise-3" class="callout challenge">
+<div id="exercise-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-3" class="callout-inner">
+<div id="exercise-2" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>You might like to look for trends in your data by month of collection
@@ -1563,28 +1526,28 @@ all of your entries in chronological order?</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li>For the <code>mo</code> column, click on <code>Sort...</code> and
+<li>For the <code>month</code> column, click on <code>Sort...</code> and
 then <code>numbers</code>. This will group all entries made in, for
 example, January, together, regardless of the year that entry was
 collected.</li>
-<li>For the <code>yr</code> column, click on <code>Sort</code> &gt;
+<li>For the <code>year</code> column, click on <code>Sort</code> &gt;
 <code>Sort...</code> &gt; <code>numbers</code> and select
 <code>sort by this column alone</code>. This will undo the sorting by
-month step. Once you’ve sorted by <code>yr</code> you can then apply
+month step. Once you’ve sorted by <code>year</code> you can then apply
 another sorting step to sort by month within year. To do this for the
-<code>mo</code> column, click on <code>Sort</code> &gt;
+<code>month</code> column, click on <code>Sort</code> &gt;
 <code>numbers</code> but do not select
 <code>sort by this column alone</code>. To ensure that all entries are
 shown chronologically, you will need to also sort by days within each
-month. Click on the <code>dy</code> column then <code>Sort</code> &gt;
+month. Click on the <code>day</code> column then <code>Sort</code> &gt;
 <code>numbers</code>. Your data should now be in chronological
 order.</li>
 </ol>
@@ -1596,12 +1559,12 @@ order.</li>
 <code>Sort</code> &gt; <code>Remove sort</code>, that column is removed
 from your multiple sort. If it is the only column sorted, then data
 reverts to its original order.</p>
-<div id="exercise-4" class="callout challenge">
+<div id="exercise-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-4" class="callout-inner">
+<div id="exercise-3" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Sort by <code>year</code>, <code>month</code> and <code>day</code> in
@@ -1631,7 +1594,7 @@ affecting the raw data.</li>
 </div>
 </section></section><section id="aio-06-reconciliation"><p>Content from <a href="06-reconciliation.html">Reconciliation of Values</a></p>
 <hr>
-<p>Last updated on 2026-10-08 |
+<p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/06-reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1680,15 +1643,19 @@ supports such a service you cannot use the <code>Reconciliation</code>
 approach.</p>
 <p>There are a few services where you can find an OpenRefine
 Reconciliation option available. For example Wikidata has a
-reconciliation service at <a href="https://wikidata.reconci.link/" class="external-link">https://wikidata.reconci.link/</a>.</p>
-</section><section><h2 class="section-heading" id="reconcile-scientific-names-with-the-encyclopedia-of-life-eol">Reconcile scientific names with the Encyclopedia of Life (EOL)<a class="anchor" aria-label="anchor" href="#reconcile-scientific-names-with-the-encyclopedia-of-life-eol"></a>
+reconciliation service at <a href="https://wikidata.reconci.link/" class="external-link">https://wikidata.reconci.link/</a>
+and the Catalogue of Life and the World Flora Online both provide
+reconciliation services for scientific names.</p>
+</section><section><h2 class="section-heading" id="reconcile-scientific-names-with-ipni-via-checklistbank">Reconcile scientific names with IPNI via ChecklistBank<a class="anchor" aria-label="anchor" href="#reconcile-scientific-names-with-ipni-via-checklistbank"></a>
 </h2>
 <hr class="half-width">
-<p>We can use the <a href="https://eol.org/" class="external-link">Encyclopedia of Life</a>
-Reconciliation service to find the taxonomic matches to the names in the
-dataset.</p>
+<p>Catalog of Life / ChecklistBank is a GBIF-related infrastructure for
+sharing nomenclatural and taxonomic data. It provides matching functions
+between datasets, and as one of the datasets that it holds is the
+International Plant Names Index, we can look up scientific names again
+IPNI using this service.</p>
 <ol style="list-style-type: decimal">
-<li><p>In the <code>scientificName</code> column use the dropdown menu
+<li><p>In the <code>species_binomial</code> column use the dropdown menu
 to choose ‘Reconcile-&gt;Start Reconciling’</p></li>
 <li><p>If this is the first time you’ve used this particular
 reconciliation service, you’ll need to add the details of the service
@@ -1699,14 +1666,16 @@ now</p></li>
 enter:
 <ul>
 <li>
-<code>https://eol.org/api/reconciliation</code> <img src="fig/or362-reconcile-add.png" alt="Prompt to add a service URL for reconciliation" class="figure">
+<code>https://api.checklistbank.org/dataset/2006/reconcile</code>
+<img src="fig/or362-reconcile-add.png" alt="Prompt to add a service URL for reconciliation" class="figure">
 </li>
 </ul>
 </li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
 <li><p>You should now see a heading in the list on the left hand side of
-the Reconciliation dialogue called “Encyclopedia of Life”</p></li>
+the Reconciliation dialogue called “Catalog of Life dataset
+2006”</p></li>
 <li><p>Click on this to choose to use this reconciliation
 service</p></li>
 <li><p>In the middle box in the reconciliation dialogue you may get
@@ -1734,13 +1703,13 @@ have many values to look up.</p>
 <p>Once the reconciliation has completed two Facets should be created
 automatically:</p>
 <ul>
-<li>scientificName: Judgement</li>
-<li>scientificName: best candidate’s score</li>
+<li>species_binomial: Judgement</li>
+<li>species_binomial: best candidate’s score</li>
 </ul>
 <p>These are two of several specific reconciliation facets and actions
 that you can get from the ‘Reconcile’ menu (from the column drop down
 menu).</p>
-<p>Close the ‘scientificName: best candidate’s score’ facet, but leave
+<p>Close the ‘species_binomial: best candidate’s score’ facet, but leave
 the ‘scientificName: Judgement’ facet open.</p>
 <p>If you look at the scientificName column, you should see some cells
 have found one or more matches - the potential matches are shown in a
@@ -1750,129 +1719,36 @@ options in cells. The ‘tick’ accepts the match for the single cell, the
 ‘double tick’ accepts the match for all identical cells.</p>
 <ol style="list-style-type: decimal">
 <li>Create a text facet on the scientificName column</li>
-<li>Choose <em>Ammospermophilus harrisii</em>
+<li>Choose <em>Decaspermum montanum</em>
 </li>
 </ol>
 <ul>
-<li>In the scientificName column you should be able to see the various
+<li>In the species_binomial column you should be able to see the various
 potential matches. Clicking on a match will take you to the EOL page for
 that entity <img src="fig/or372-reconcile-results.png" alt="Reconciliation menu for each cell" class="figure">
 </li>
 </ul>
 <ol style="list-style-type: decimal">
 <li>Click a ‘double tick’ in one of the scientificName column cells for
-the option “<em>Ammospermophilus harrisii</em> (Audubon &amp; Bachman
-1854)”</li>
+the option “<em>Decaspermum montanum</em> Ridl.”</li>
 <li>This will accept this as a match for all cells with this value - you
 should see the other options disappear</li>
 </ol>
 <p>There are two things that reconciliation can do for you. Firstly it
 gets a standard form of the name or label for the entity. Secondly it
-gets an ID for the entity - in this case a page and numeric id for the
-scientific name in EOL. This is hidden in the default view, but can be
+gets an ID for the entity - in this case a numeric id for the scientific
+name in IPNI. This is hidden in the default view, but can be
 extracted:</p>
 <ol style="list-style-type: decimal">
-<li>In the scientificName column use the dropdown menu to choose
+<li>In the species_binomial column use the dropdown menu to choose
 <code>Reconcile</code> &gt;
 <code>Add entity identifiers column...</code>
 </li>
-<li>Give the column the name “EOL-ID”</li>
-<li>This will create a new column that contains the EOL ID for the
+<li>Give the column the name “IPNI-ID”</li>
+<li>This will create a new column that contains the IPNI ID for the
 matched entity</li>
 </ol>
-<figure><img src="fig/or362-reconcile-id.png" alt="Column with the identifiers from reconciliation" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="reconcile-country-state-and-counties-against-wikidata">Reconcile country, state, and counties against Wikidata<a class="anchor" aria-label="anchor" href="#reconcile-country-state-and-counties-against-wikidata"></a>
-</h2>
-<hr class="half-width">
-<p>The country field contains several alternative ways to indicate the
-United States of America, including:</p>
-<ul>
-<li><code>US</code></li>
-<li><code>UNITED STATES</code></li>
-<li><code>United States of America</code></li>
-</ul>
-<div id="exercise" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise</h3>
-<div class="callout-content">
-<p>If Wikidata does not appear in the list of reconciliation services,
-add the standard service using the URL:
-<code>https://wikidata.reconci.link/en/api</code></p>
-<ul>
-<li>Reconcile the columns <code>county</code>, <code>state</code>, and
-<code>country</code> using Wikidata.
-<ul>
-<li>If a type does not show in the list, search using the
-<code>Reconcile against type</code> box:
-<ul>
-<li>
-<code>country</code>: <code>country (Q6256)</code>
-</li>
-<li>
-<code>state</code>: <code>U.S. state (Q35657)</code>
-</li>
-<li>
-<code>county</code>:
-<code>county of the United States (Q47168)</code>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Mouseover the options listed to see a preview of the entity
-suggested
-<ul>
-<li>For the cells with multiple options, choose one of the suggested
-values and click the double checkmark button to apply to all cells with
-the same value</li>
-</ul>
-</li>
-<li>Click the menu of the <code>country</code> column and select
-<code>Edit column</code> &gt;
-<code>Add column based on this column...</code>
-</li>
-<li>Enter “reconciled_country” in the field for
-<code>New column name</code>
-</li>
-<li>In the <code>Expression</code> box, enter the following GREL:
-<code>cell.recon.best.name</code>
-</li>
-<li>Click <code>OK</code>
-</li>
-</ul>
-<p>This will create a new column with the reconciled names for the
-countries. Create a text facet to see that there is a single name for
-each country.</p>
-<ol style="list-style-type: decimal">
-<li>In the cases where OpenRefine did not select a match automatically,
-are the options relevant?</li>
-<li>Why do some cells in the <code>county</code> column have many
-options?</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<ol style="list-style-type: decimal">
-<li>The options may be for the same place, but with different wording,
-like <code>Hernando County</code> for <code>Hernando</code>.</li>
-<li>Several county names exist in multiple states. You can mouseover
-each option and find the correct one that matches the state.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div id="keypoints1" class="callout keypoints">
+<figure><img src="fig/or362-reconcile-id.png" alt="Column with the identifiers from reconciliation" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -2417,8 +2293,8 @@ OpenRefine</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/aio.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/aio.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-20",
-  "datePublished": "2026-10-20"
+  "dateModified": "2026-10-21",
+  "datePublished": "2026-10-21"
 }
 
   </script><script>

@@ -370,7 +370,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Filtering and Sorting with OpenRefine</h1>
-        <p>Last updated on 2026-10-08 |
+        <p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/05-filter-exclude-sort.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -415,21 +415,21 @@ filters to your data.</p>
 <h3 id="includingexcluding-data-entries-on-facets">Including/excluding data entries on facets<a class="anchor" aria-label="anchor" href="#includingexcluding-data-entries-on-facets"></a></h3>
 <p>One way to filter down our data is to use the <code>include</code> or
 <code>exclude</code> buttons on the entries in a text facet. If you
-still have your text facet for <code>scientificName</code>, you can use
-it. If you’ve closed that facet, recreate it by selecting
+still have your text facet for <code>species_binomial</code>, you can
+use it. If you’ve closed that facet, recreate it by selecting
 <code>Facet</code> &gt; <code>Text facet</code> on the
-<code>scientificName</code> column.</p>
-<ol style="list-style-type: decimal"><li>In the text facet, hover over one of the names, e.g. <em>Baiomys
-taylori</em>. Notice that when you hover over it, there are buttons to
-the right for <code>edit</code> and <code>include</code>.</li>
-<li>Whilst hovering over <em>Baiomys taylori</em>, move to the right and
-click the <code>include</code> option. This will include this species,
-as signified by the name of the species changing from blue to orange,
-and new options of <code>edit</code> and <code>exclude</code> will be
-presented. Note that in the top of the page, “33 matching rows” is now
-displayed instead of “790 rows”.</li>
+<code>species_binomial</code> column.</p>
+<ol style="list-style-type: decimal"><li>In the text facet, hover over one of the names, e.g. <em>Decaspermum
+gracilentum</em>. Notice that when you hover over it, there are buttons
+to the right for <code>edit</code> and <code>include</code>.</li>
+<li>Whilst hovering over <em>Decaspermum gracilentum</em>, move to the
+right and click the <code>include</code> option. This will include this
+species, as signified by the name of the species changing from blue to
+orange, and new options of <code>edit</code> and <code>exclude</code>
+will be presented. Note that in the top of the page, “1 matching rows”
+is now displayed instead of “964 rows”.</li>
 <li>You can include other species in your current filter - e.g. click on
-<em>Chaetodipus baileyi</em> in the same way to include it in the
+<em>Decaspermum humile</em> in the same way to include it in the
 filter.</li>
 <li>Alternatively, you can click the name of the species to include it
 in the filter instead of clicking the
@@ -446,16 +446,16 @@ continuing to the next step.</p>
 <h3 id="text-filters">Text filters<a class="anchor" aria-label="anchor" href="#text-filters"></a></h3>
 <p>One way to filter data is to create a text filter on a column. Close
 all facets you may have created previously and reinstate the text facet
-on the <code>scientificName</code> column.</p>
-<ol style="list-style-type: decimal"><li><p>Click the down arrow next to <code>scientificName</code> &gt;
-<code>Text filter</code>. A <code>scientificName</code> filter will
+on the <code>species_binomial</code> column.</p>
+<ol style="list-style-type: decimal"><li><p>Click the down arrow next to <code>species_binomial</code> &gt;
+<code>Text filter</code>. A <code>species_binomial</code> filter will
 appear on the left margin below the text facet.</p></li>
-<li><p>Type in <code>bai</code> into the text box in the filter and
-press return. At the top of the page it will report that, out of the 790
-rows in the raw data, there are 35 rows in which the text has been found
-within the <code>scientificName</code> column (and these rows will be
+<li><p>Type in <code>ile</code> into the text box in the filter and
+press return. At the top of the page it will report that, out of the 964
+rows in the raw data, there are 18 rows in which the text has been found
+within the <code>species_binomial</code> column (and these rows will be
 selected for the subsequent steps).</p></li>
-</ol><figure><img src="fig/or362-filter-scientificname.png" alt="OpenRefine filtering example" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li>Near the top of the screen, change <code>Show:</code> to 50. This
+</ol><figure><img src="fig/or362-filter-scientificname.png" alt="OpenRefine filtering example" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li>Near the top of the screen, change <code>Show:</code> to 25. This
 way, you will see all the matching rows in a single page.</li>
 </ol><div id="exercise" class="callout challenge">
 <div class="callout-square">
@@ -480,19 +480,13 @@ selected?</li>
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Do <code>Facet</code> &gt; <code>Text facet</code> on the
 <code>scientificName</code> column after filtering. This will show that
-two names match your filter criteria. They are <em>Baiomys taylori</em>
-and <em>Chaetodipus baileyi</em>.</li>
-<li>To restrict to only one of these two species, you could:</li>
-</ol><ul><li>Check the <code>case sensitive</code> box within the
-<code>scientificName</code> facet. Once you do this, you will see that
-using the upper-case <code>Bai</code> will only &gt; &gt; return
-<em>Baiomys taylori</em>, while using lower-case <code>bai</code> will
-only return <em>Chaetodipus baileyi</em>.</li>
-<li>You could include more letters in your filter (i.e. typing
-<code>baio</code> will exclusively return <em>Baiomys taylori</em>,
-while <code>bail</code> will only return <em>Chaetodipus
-baileyi</em>).</li>
-</ul></div>
+two names match your filter criteria. They are <em>Decaspermum
+gracilentum</em> and <em>Decaspermum humile</em>.</li>
+<li>To restrict to only one of these two species, you could include more
+letters in your filter (i.e. typing <code>ilen</code> will exclusively
+return <em>Decaspermum gracilentum</em>, while <code>mile</code> will
+only return <em>Decaspermum humile</em>).</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -511,8 +505,8 @@ further inspection and analysis.</p>
 </div>
 </div>
 </div>
-<p><strong>Important:</strong> Make sure both species (<em>Baiomys
-taylori</em> and <em>Chaetodipus baileyi</em>) are included in your
+<p><strong>Important:</strong> Make sure both species (<em>Decaspermum
+gracilentum</em> and <em>Decaspermum humile</em>) are included in your
 filtered dataset before continuing with the rest of the exercises.</p>
 </div>
 </section><section><h2 class="section-heading" id="sort">Sort<a class="anchor" aria-label="anchor" href="#sort"></a></h2>
@@ -548,7 +542,7 @@ will then appear for you to fine-tune your sorting.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>In the <code>mo</code> column, select <code>Sort...</code> &gt;
+<p>In the <code>month</code> column, select <code>Sort...</code> &gt;
 <code>numbers</code> and select <code>smallest first</code>. The months
 are listed from 1 (for January) through 12 (December).</p>
 </div>
@@ -571,46 +565,19 @@ to reverse the order of the sort.</p>
 <p><code>Sort</code> &gt; <code>Remove sort</code> - This option allows
 you to undo your sort.</p>
 </blockquote></li>
-</ul><div id="exercise-2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise</h3>
-<div class="callout-content">
-<p>Sort the data by <code>plot</code>. What year(s) were observations
-recorded for plot 1 in this filtered dataset?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<p>In the <code>plot</code> column, select <code>Sort...</code> &gt;
-<code>numbers</code> and select <code>smallest first</code>. The years
-represented include 1990 and 1995.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
+</ul><div class="section level3">
 <h3 id="sorting-by-multiple-columns">Sorting by multiple columns<a class="anchor" aria-label="anchor" href="#sorting-by-multiple-columns"></a></h3>
 <p>You can sort by multiple columns by performing sort on additional
 columns. The sort will depend on the order in which you select columns
 to sort. To restart the sorting process with a particular column, check
 the <code>sort by this column alone</code> box in the <code>Sort</code>
 pop-up menu.</p>
-<div id="exercise-3" class="callout challenge">
+<div id="exercise-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-3" class="callout-inner">
+<div id="exercise-2" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>You might like to look for trends in your data by month of collection
@@ -621,27 +588,27 @@ all of your entries in chronological order?</li>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>For the <code>mo</code> column, click on <code>Sort...</code> and
+<ol style="list-style-type: decimal"><li>For the <code>month</code> column, click on <code>Sort...</code> and
 then <code>numbers</code>. This will group all entries made in, for
 example, January, together, regardless of the year that entry was
 collected.</li>
-<li>For the <code>yr</code> column, click on <code>Sort</code> &gt;
+<li>For the <code>year</code> column, click on <code>Sort</code> &gt;
 <code>Sort...</code> &gt; <code>numbers</code> and select
 <code>sort by this column alone</code>. This will undo the sorting by
-month step. Once you’ve sorted by <code>yr</code> you can then apply
+month step. Once you’ve sorted by <code>year</code> you can then apply
 another sorting step to sort by month within year. To do this for the
-<code>mo</code> column, click on <code>Sort</code> &gt;
+<code>month</code> column, click on <code>Sort</code> &gt;
 <code>numbers</code> but do not select
 <code>sort by this column alone</code>. To ensure that all entries are
 shown chronologically, you will need to also sort by days within each
-month. Click on the <code>dy</code> column then <code>Sort</code> &gt;
+month. Click on the <code>day</code> column then <code>Sort</code> &gt;
 <code>numbers</code>. Your data should now be in chronological
 order.</li>
 </ol></div>
@@ -652,12 +619,12 @@ order.</li>
 <code>Sort</code> &gt; <code>Remove sort</code>, that column is removed
 from your multiple sort. If it is the only column sorted, then data
 reverts to its original order.</p>
-<div id="exercise-4" class="callout challenge">
+<div id="exercise-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-4" class="callout-inner">
+<div id="exercise-3" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Sort by <code>year</code>, <code>month</code> and <code>day</code> in
@@ -743,8 +710,8 @@ affecting the raw data.</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/05-filter-exclude-sort.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/05-filter-exclude-sort.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-08",
-  "datePublished": "2026-10-20"
+  "dateModified": "2026-10-21",
+  "datePublished": "2026-10-21"
 }
 
   </script><script>

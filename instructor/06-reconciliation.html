@@ -255,8 +255,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#reconciliation-of-names">Reconciliation of names</a></li>
-<li><a href="#reconcile-scientific-names-with-the-encyclopedia-of-life-eol">Reconcile scientific names with the Encyclopedia of Life (EOL)</a></li>
-<li><a href="#reconcile-country-state-and-counties-against-wikidata">Reconcile country, state, and counties against Wikidata</a></li>
+<li><a href="#reconcile-scientific-names-with-ipni-via-checklistbank">Reconcile scientific names with IPNI via ChecklistBank</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -371,7 +370,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reconciliation of Values</h1>
-        <p>Last updated on 2026-10-08 |
+        <p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/06-reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -422,12 +421,16 @@ supports such a service you cannot use the <code>Reconciliation</code>
 approach.</p>
 <p>There are a few services where you can find an OpenRefine
 Reconciliation option available. For example Wikidata has a
-reconciliation service at <a href="https://wikidata.reconci.link/" class="external-link">https://wikidata.reconci.link/</a>.</p>
-</section><section><h2 class="section-heading" id="reconcile-scientific-names-with-the-encyclopedia-of-life-eol">Reconcile scientific names with the Encyclopedia of Life (EOL)<a class="anchor" aria-label="anchor" href="#reconcile-scientific-names-with-the-encyclopedia-of-life-eol"></a></h2>
-<hr class="half-width"><p>We can use the <a href="https://eol.org/" class="external-link">Encyclopedia of Life</a>
-Reconciliation service to find the taxonomic matches to the names in the
-dataset.</p>
-<ol style="list-style-type: decimal"><li><p>In the <code>scientificName</code> column use the dropdown menu
+reconciliation service at <a href="https://wikidata.reconci.link/" class="external-link">https://wikidata.reconci.link/</a>
+and the Catalogue of Life and the World Flora Online both provide
+reconciliation services for scientific names.</p>
+</section><section><h2 class="section-heading" id="reconcile-scientific-names-with-ipni-via-checklistbank">Reconcile scientific names with IPNI via ChecklistBank<a class="anchor" aria-label="anchor" href="#reconcile-scientific-names-with-ipni-via-checklistbank"></a></h2>
+<hr class="half-width"><p>Catalog of Life / ChecklistBank is a GBIF-related infrastructure for
+sharing nomenclatural and taxonomic data. It provides matching functions
+between datasets, and as one of the datasets that it holds is the
+International Plant Names Index, we can look up scientific names again
+IPNI using this service.</p>
+<ol style="list-style-type: decimal"><li><p>In the <code>species_binomial</code> column use the dropdown menu
 to choose ‘Reconcile-&gt;Start Reconciling’</p></li>
 <li><p>If this is the first time you’ve used this particular
 reconciliation service, you’ll need to add the details of the service
@@ -435,10 +438,12 @@ now</p></li>
 </ol><ul><li>Click ‘Add Standard Service…’ and in the dialogue that appears
 enter:
 <ul><li>
-<code>https://eol.org/api/reconciliation</code> <img src="../fig/or362-reconcile-add.png" alt="Prompt to add a service URL for reconciliation" class="figure"></li>
+<code>https://api.checklistbank.org/dataset/2006/reconcile</code>
+<img src="../fig/or362-reconcile-add.png" alt="Prompt to add a service URL for reconciliation" class="figure"></li>
 </ul></li>
 </ul><ol start="3" style="list-style-type: decimal"><li><p>You should now see a heading in the list on the left hand side of
-the Reconciliation dialogue called “Encyclopedia of Life”</p></li>
+the Reconciliation dialogue called “Catalog of Life dataset
+2006”</p></li>
 <li><p>Click on this to choose to use this reconciliation
 service</p></li>
 <li><p>In the middle box in the reconciliation dialogue you may get
@@ -460,12 +465,12 @@ results before a match is made</p></li>
 have many values to look up.</p>
 <p>Once the reconciliation has completed two Facets should be created
 automatically:</p>
-<ul><li>scientificName: Judgement</li>
-<li>scientificName: best candidate’s score</li>
+<ul><li>species_binomial: Judgement</li>
+<li>species_binomial: best candidate’s score</li>
 </ul><p>These are two of several specific reconciliation facets and actions
 that you can get from the ‘Reconcile’ menu (from the column drop down
 menu).</p>
-<p>Close the ‘scientificName: best candidate’s score’ facet, but leave
+<p>Close the ‘species_binomial: best candidate’s score’ facet, but leave
 the ‘scientificName: Judgement’ facet open.</p>
 <p>If you look at the scientificName column, you should see some cells
 have found one or more matches - the potential matches are shown in a
@@ -474,105 +479,28 @@ list in each cell. Next to each potential match there is a ‘tick’ and a
 options in cells. The ‘tick’ accepts the match for the single cell, the
 ‘double tick’ accepts the match for all identical cells.</p>
 <ol style="list-style-type: decimal"><li>Create a text facet on the scientificName column</li>
-<li>Choose <em>Ammospermophilus harrisii</em>
+<li>Choose <em>Decaspermum montanum</em>
 </li>
-</ol><ul><li>In the scientificName column you should be able to see the various
+</ol><ul><li>In the species_binomial column you should be able to see the various
 potential matches. Clicking on a match will take you to the EOL page for
 that entity <img src="../fig/or372-reconcile-results.png" alt="Reconciliation menu for each cell" class="figure"></li>
 </ul><ol style="list-style-type: decimal"><li>Click a ‘double tick’ in one of the scientificName column cells for
-the option “<em>Ammospermophilus harrisii</em> (Audubon &amp; Bachman
-1854)”</li>
+the option “<em>Decaspermum montanum</em> Ridl.”</li>
 <li>This will accept this as a match for all cells with this value - you
 should see the other options disappear</li>
 </ol><p>There are two things that reconciliation can do for you. Firstly it
 gets a standard form of the name or label for the entity. Secondly it
-gets an ID for the entity - in this case a page and numeric id for the
-scientific name in EOL. This is hidden in the default view, but can be
+gets an ID for the entity - in this case a numeric id for the scientific
+name in IPNI. This is hidden in the default view, but can be
 extracted:</p>
-<ol style="list-style-type: decimal"><li>In the scientificName column use the dropdown menu to choose
+<ol style="list-style-type: decimal"><li>In the species_binomial column use the dropdown menu to choose
 <code>Reconcile</code> &gt;
 <code>Add entity identifiers column...</code>
 </li>
-<li>Give the column the name “EOL-ID”</li>
-<li>This will create a new column that contains the EOL ID for the
+<li>Give the column the name “IPNI-ID”</li>
+<li>This will create a new column that contains the IPNI ID for the
 matched entity</li>
-</ol><figure><img src="../fig/or362-reconcile-id.png" alt="Column with the identifiers from reconciliation" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="reconcile-country-state-and-counties-against-wikidata">Reconcile country, state, and counties against Wikidata<a class="anchor" aria-label="anchor" href="#reconcile-country-state-and-counties-against-wikidata"></a></h2>
-<hr class="half-width"><p>The country field contains several alternative ways to indicate the
-United States of America, including:</p>
-<ul><li><code>US</code></li>
-<li><code>UNITED STATES</code></li>
-<li><code>United States of America</code></li>
-</ul><div id="exercise" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise</h3>
-<div class="callout-content">
-<p>If Wikidata does not appear in the list of reconciliation services,
-add the standard service using the URL:
-<code>https://wikidata.reconci.link/en/api</code></p>
-<ul><li>Reconcile the columns <code>county</code>, <code>state</code>, and
-<code>country</code> using Wikidata.
-<ul><li>If a type does not show in the list, search using the
-<code>Reconcile against type</code> box:
-<ul><li>
-<code>country</code>: <code>country (Q6256)</code>
-</li>
-<li>
-<code>state</code>: <code>U.S. state (Q35657)</code>
-</li>
-<li>
-<code>county</code>:
-<code>county of the United States (Q47168)</code>
-</li>
-</ul></li>
-</ul></li>
-<li>Mouseover the options listed to see a preview of the entity
-suggested
-<ul><li>For the cells with multiple options, choose one of the suggested
-values and click the double checkmark button to apply to all cells with
-the same value</li>
-</ul></li>
-<li>Click the menu of the <code>country</code> column and select
-<code>Edit column</code> &gt;
-<code>Add column based on this column...</code>
-</li>
-<li>Enter “reconciled_country” in the field for
-<code>New column name</code>
-</li>
-<li>In the <code>Expression</code> box, enter the following GREL:
-<code>cell.recon.best.name</code>
-</li>
-<li>Click <code>OK</code>
-</li>
-</ul><p>This will create a new column with the reconciled names for the
-countries. Create a text facet to see that there is a single name for
-each country.</p>
-<ol style="list-style-type: decimal"><li>In the cases where OpenRefine did not select a match automatically,
-are the options relevant?</li>
-<li>Why do some cells in the <code>county</code> column have many
-options?</li>
-</ol></div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<ol style="list-style-type: decimal"><li>The options may be for the same place, but with different wording,
-like <code>Hernando County</code> for <code>Hernando</code>.</li>
-<li>Several county names exist in multiple states. You can mouseover
-each option and find the correct one that matches the state.</li>
-</ol></div>
-</div>
-</div>
-</div>
-<div id="keypoints1" class="callout keypoints">
+</ol><figure><img src="../fig/or362-reconcile-id.png" alt="Column with the identifiers from reconciliation" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -644,8 +572,8 @@ data</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/06-reconciliation.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/06-reconciliation.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-08",
-  "datePublished": "2026-10-20"
+  "dateModified": "2026-10-21",
+  "datePublished": "2026-10-21"
 }
 
   </script><script>
