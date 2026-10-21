@@ -70,7 +70,7 @@ If you look at the scientificName column, you should see some cells have found o
 1. Create a text facet on the scientificName column
 2. Choose *Decaspermum montanum*
 
-- In the species_binomial column you should be able to see the various potential matches. Clicking on a match will take you to the EOL page for that entity
+- In the species_binomial column you should be able to see the various potential matches. Clicking on a match will take you to the ChecklistBank page for that entity
   ![](fig/or372-reconcile-results.png){alt='Reconciliation menu for each cell'}
 
 1. Click a 'double tick' in one of the scientificName column cells for the option "*Decaspermum montanum* Ridl."
