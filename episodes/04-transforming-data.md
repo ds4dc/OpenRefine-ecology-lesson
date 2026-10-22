@@ -103,26 +103,26 @@ as before. You should now get only two columns `species_binomial 1` and `species
 
 ## Renaming columns
 
-We now have the genus and species parts neatly separated into 2 columns - `scientificName 1` and `scientificName 2`.
+We now have the genus and species parts neatly separated into 2 columns - `species_binomial 1` and `species_binomial 2`.
 We want to rename these as `genus` and `species`, respectively.
 
-1. Let's first rename the `scientificName 1` column. On the column, click the down arrow and then `Edit column` > `Rename this column`.
+1. Let's first rename the `species_binomial 1` column. On the column, click the down arrow and then `Edit column` > `Rename this column`.
 2. Type "genus" into the box that appears.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Exercise
 
-Try to change the name of the `scientificName 1` column to `genus`. What problem do you encounter? How can you fix the problem?
+Try to change the name of the `species_binomial 1` column to `genus`. What problem do you encounter? How can you fix the problem?
 
 :::::::::::::::  solution
 
 ## Solution
 
-1. On the `scientificName 2` column, click the down arrow and then `Edit column` > `Rename this column`.
-2. Type "species" into the box that appears.
-3. A pop-up will appear that says `Another column already named species`. This is because there is another column with the same name where we've recorded the species abbreviation.
-4. You can use another name for the `scientificName 2` or change the name of the `species` column and then rename the `scientificName 2` column.
+1. On the `species_binomial 1` column, click the down arrow and then `Edit column` > `Rename this column`.
+2. Type "genus" into the box that appears.
+3. A pop-up will appear that says `Another column already named genus`. This is because there is another column with the same name where we've recorded the species abbreviation.
+4. You can use another name for the `species_binomial 1` or change the name of the existing `genus` column and then rename the `species_binomial 1` column.
   
   
 
@@ -130,7 +130,6 @@ Try to change the name of the `scientificName 1` column to `genus`. What problem
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Edit the name of the `species` column to `species_abbreviation`. Then, rename `scientificName 2` to `species`.
 
 ## Combining columns to create new ones
 

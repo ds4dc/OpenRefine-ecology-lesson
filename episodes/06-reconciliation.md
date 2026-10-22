@@ -63,24 +63,24 @@ Once the reconciliation has completed two Facets should be created automatically
 
 These are two of several specific reconciliation facets and actions that you can get from the 'Reconcile' menu (from the column drop down menu).
 
-Close the 'species_binomial: best candidate's score' facet, but leave the 'scientificName: Judgement' facet open.
+Close the 'species_binomial: best candidate's score' facet, but leave the 'species_binomial: Judgement' facet open.
 
-If you look at the scientificName column, you should see some cells have found one or more matches - the potential matches are shown in a list in each cell. Next to each potential match there is a 'tick' and a 'double tick'. To accept a reconciliation match you can use the 'tick' options in cells. The 'tick' accepts the match for the single cell, the 'double tick' accepts the match for all identical cells.
+If you look at the species_binomial column, you should see some cells have found one or more matches - the potential matches are shown in a list in each cell. Next to each potential match there is a 'tick' and a 'double tick'. To accept a reconciliation match you can use the 'tick' options in cells. The 'tick' accepts the match for the single cell, the 'double tick' accepts the match for all identical cells.
 
-1. Create a text facet on the scientificName column
+1. Create a text facet on the species_binomial column
 2. Choose *Decaspermum montanum*
 
 - In the species_binomial column you should be able to see the various potential matches. Clicking on a match will take you to the ChecklistBank page for that entity
   ![](fig/or372-reconcile-results.png){alt='Reconciliation menu for each cell'}
 
-1. Click a 'double tick' in one of the scientificName column cells for the option "*Decaspermum montanum* Ridl."
+1. Click a 'double tick' in one of the species_binomial column cells for the option "*Decaspermum montanum* Ridl."
 2. This will accept this as a match for all cells with this value - you should see the other options disappear
 
 
 
 There are two things that reconciliation can do for you. Firstly it gets a standard form of the name or label for the entity. Secondly it gets an ID for the entity - in this case a numeric id for the scientific name in IPNI. This is hidden in the default view, but can be extracted:
 
-1. In the species_binomial column use the dropdown menu to choose `Reconcile` > `Add entity identifiers column...`
+1. In the `species_binomial` column use the dropdown menu to choose `Reconcile` > `Add entity identifiers column...`
 2. Give the column the name "IPNI-ID"
 3. This will create a new column that contains the IPNI ID for the matched entity
 
