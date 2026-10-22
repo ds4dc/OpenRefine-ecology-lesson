@@ -64,7 +64,7 @@ One way to filter data is to create a text filter on a column. Close all facets 
 
 ## Solution
 
-1. Do `Facet` > `Text facet` on the `scientificName` column after filtering. This will show that
+1. Do `Facet` > `Text facet` on the `species_binomial` column after filtering. This will show that
   two names match your filter criteria. They are *Decaspermum gracilentum* and *Decaspermum humile*.
 2. To restrict to only one of these two species, you could include more letters in your filter (i.e. typing `ilen` will exclusively return *Decaspermum gracilentum*, while `mile` will only return *Decaspermum humile*).
 
