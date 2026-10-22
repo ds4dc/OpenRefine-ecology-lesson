@@ -6,13 +6,11 @@ title: Setup
 
 ## Data
 
-**Download** the data file [Portal\_rodents\_19772002\_simplified.csv](data/Portal_rodents_19772002_simplified.csv), which is a csv file that will open in a new browser tab. Be sure to right click or control click in order to save the file (NOTE: In Safari, right click and select `Download linked file`; in Chrome and Firefox, right-click and select `Save link as...`). Make a note of the location (i.e. the folder, your Desktop) to which you save the file.
+**Download** the data file [herbarium_specimens_simplified.csv](data/herbarium_specimens_simplified.csv), which is a csv file that will open in a new browser tab. Be sure to right click or control click in order to save the file (NOTE: In Safari, right click and select `Download linked file`; in Chrome and Firefox, right-click and select `Save link as...`). Make a note of the location (i.e. the folder, your Desktop) to which you save the file.
 
 ### About the data
 
-The data for this lesson is a part of the Data Carpentry Ecology workshop.
-It is a teaching version of the Portal Database. The data in this lesson
-is a subset of the teaching version that has been intentionally 'messed up'
+The data for this lesson has been downloaded from the GBIF data portal and has been intentionally 'messed up'
 for this lesson.
 
 The data for this lesson and the workshop are in the
