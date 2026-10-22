@@ -370,7 +370,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reconciliation of Values</h1>
-        <p>Last updated on 2026-10-21 |
+        <p>Last updated on 2026-10-22 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/06-reconciliation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -471,30 +471,40 @@ automatically:</p>
 that you can get from the ‘Reconcile’ menu (from the column drop down
 menu).</p>
 <p>Close the ‘species_binomial: best candidate’s score’ facet, but leave
-the ‘scientificName: Judgement’ facet open.</p>
-<p>If you look at the scientificName column, you should see some cells
+the ‘species_binomial: Judgement’ facet open.</p>
+<p>If you look at the species_binomial column, you should see some cells
 have found one or more matches - the potential matches are shown in a
 list in each cell. Next to each potential match there is a ‘tick’ and a
 ‘double tick’. To accept a reconciliation match you can use the ‘tick’
 options in cells. The ‘tick’ accepts the match for the single cell, the
 ‘double tick’ accepts the match for all identical cells.</p>
-<ol style="list-style-type: decimal"><li>Create a text facet on the scientificName column</li>
+<ol style="list-style-type: decimal"><li>Create a text facet on the species_binomial column</li>
 <li>Choose <em>Decaspermum montanum</em>
 </li>
 </ol><ul><li>In the species_binomial column you should be able to see the various
 potential matches. Clicking on a match will take you to the
 ChecklistBank page for that entity <img src="../fig/or372-reconcile-results.png" alt="Reconciliation menu for each cell" class="figure"></li>
-</ul><ol style="list-style-type: decimal"><li>Click a ‘double tick’ in one of the scientificName column cells for
-the option “<em>Decaspermum montanum</em> Ridl.”</li>
+</ul><ol style="list-style-type: decimal"><li>Click a ‘double tick’ in one of the species_binomial column cells
+for the option “<em>Decaspermum montanum</em> Ridl.”</li>
 <li>This will accept this as a match for all cells with this value - you
 should see the other options disappear</li>
-</ol><p>There are two things that reconciliation can do for you. Firstly it
+</ol><p>As we have relatively few species in this dataset, you can work
+through them one by one by selecting the species in the facet, examining
+the name suggested by the reconciliation service and using the double
+ticks to select it if it looks OK.</p>
+<p>Notice the name “Decaspermum fruticosm” - the reconciliation service
+has suggested incorrectly (the genus Decaspermum).</p>
+<figure><img src="../fig/or362-reconcile-result.png" alt="Reconciliation results for an incorrectly spelled name" class="figure mx-auto d-block"></figure><p>There is a “search” option for us to find the correct record
+manually:</p>
+<figure><img src="../fig/or362-reconcile-search.png" alt="Reconciliation search results" class="figure mx-auto d-block"></figure><p>Continue through the species names either selecting the suggested
+name or searchoing for the correct one.</p>
+<p>There are two things that reconciliation can do for you. Firstly it
 gets a standard form of the name or label for the entity. Secondly it
 gets an ID for the entity - in this case a numeric id for the scientific
 name in IPNI. This is hidden in the default view, but can be
 extracted:</p>
-<ol style="list-style-type: decimal"><li>In the species_binomial column use the dropdown menu to choose
-<code>Reconcile</code> &gt;
+<ol style="list-style-type: decimal"><li>In the <code>species_binomial</code> column use the dropdown menu to
+choose <code>Reconcile</code> &gt;
 <code>Add entity identifiers column...</code>
 </li>
 <li>Give the column the name “IPNI-ID”</li>
@@ -572,7 +582,7 @@ data</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/06-reconciliation.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/06-reconciliation.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-10-22",
   "datePublished": "2026-10-22"
 }
 

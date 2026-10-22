@@ -374,7 +374,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Transforming Data</h1>
-        <p>Last updated on 2026-10-21 |
+        <p>Last updated on 2026-10-22 |
 
         <a href="https://github.com/datacarpentry/OpenRefine-ecology-lesson/edit/main/episodes/04-transforming-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -537,11 +537,11 @@ before. You should now get only two columns
 </div>
 </section><section><h2 class="section-heading" id="renaming-columns">Renaming columns<a class="anchor" aria-label="anchor" href="#renaming-columns"></a></h2>
 <hr class="half-width"><p>We now have the genus and species parts neatly separated into 2
-columns - <code>scientificName 1</code> and
-<code>scientificName 2</code>. We want to rename these as
+columns - <code>species_binomial 1</code> and
+<code>species_binomial 2</code>. We want to rename these as
 <code>genus</code> and <code>species</code>, respectively.</p>
-<ol style="list-style-type: decimal"><li>Let’s first rename the <code>scientificName 1</code> column. On the
-column, click the down arrow and then <code>Edit column</code> &gt;
+<ol style="list-style-type: decimal"><li>Let’s first rename the <code>species_binomial 1</code> column. On
+the column, click the down arrow and then <code>Edit column</code> &gt;
 <code>Rename this column</code>.</li>
 <li>Type “genus” into the box that appears.</li>
 </ol><div id="exercise-2" class="callout challenge">
@@ -552,9 +552,9 @@ column, click the down arrow and then <code>Edit column</code> &gt;
 <div id="exercise-2" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<p>Try to change the name of the <code>scientificName 1</code> column to
-<code>genus</code>. What problem do you encounter? How can you fix the
-problem?</p>
+<p>Try to change the name of the <code>species_binomial 1</code> column
+to <code>genus</code>. What problem do you encounter? How can you fix
+the problem?</p>
 </div>
 </div>
 </div>
@@ -565,24 +565,21 @@ problem?</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>On the <code>scientificName 2</code> column, click the down arrow
+<ol style="list-style-type: decimal"><li>On the <code>species_binomial 1</code> column, click the down arrow
 and then <code>Edit column</code> &gt;
 <code>Rename this column</code>.</li>
-<li>Type “species” into the box that appears.</li>
+<li>Type “genus” into the box that appears.</li>
 <li>A pop-up will appear that says
-<code>Another column already named species</code>. This is because there
+<code>Another column already named genus</code>. This is because there
 is another column with the same name where we’ve recorded the species
 abbreviation.</li>
-<li>You can use another name for the <code>scientificName 2</code> or
-change the name of the <code>species</code> column and then rename the
-<code>scientificName 2</code> column.</li>
+<li>You can use another name for the <code>species_binomial 1</code> or
+change the name of the existing <code>genus</code> column and then
+rename the <code>species_binomial 1</code> column.</li>
 </ol></div>
 </div>
 </div>
 </div>
-<p>Edit the name of the <code>species</code> column to
-<code>species_abbreviation</code>. Then, rename
-<code>scientificName 2</code> to <code>species</code>.</p>
 </section><section><h2 class="section-heading" id="combining-columns-to-create-new-ones">Combining columns to create new ones<a class="anchor" aria-label="anchor" href="#combining-columns-to-create-new-ones"></a></h2>
 <hr class="half-width"><p>The date for each row in the data file is split in three columns:
 <code>year</code>, <code>month</code> and <code>day</code>. We can
@@ -725,7 +722,7 @@ bulk</li>
   "url": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/04-transforming-data.html",
   "identifier": "https://datacarpentry.github.io/OpenRefine-ecology-lesson/instructor/04-transforming-data.html",
   "dateCreated": "2015-04-04",
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-10-22",
   "datePublished": "2026-10-22"
 }
 
