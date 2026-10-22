@@ -76,6 +76,20 @@ If you look at the species_binomial column, you should see some cells have found
 1. Click a 'double tick' in one of the species_binomial column cells for the option "*Decaspermum montanum* Ridl."
 2. This will accept this as a match for all cells with this value - you should see the other options disappear
 
+As we have relatively few species in this dataset, you can work through them one by one by selecting the species 
+in the facet, examining the name suggested by the reconciliation service and using the double ticks to select it 
+if it looks OK.
+
+Notice the name "Decaspermum fruticosm" - the reconciliation service has suggested incorrectly (the genus Decaspermum).
+
+  ![](fig/or362-reconcile-result.png){alt='Reconciliation results for an incorrectly spelled name'}
+
+
+There is a "search" option for us to find the correct record manually:
+
+  ![](fig/or362-reconcile-search.png){alt='Reconciliation search results'}
+
+Continue through the species names either selecting the suggested name or searchoing for the correct one.
 
 
 There are two things that reconciliation can do for you. Firstly it gets a standard form of the name or label for the entity. Secondly it gets an ID for the entity - in this case a numeric id for the scientific name in IPNI. This is hidden in the default view, but can be extracted:
